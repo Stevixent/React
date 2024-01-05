@@ -6,7 +6,7 @@ function ListGroup() {
         <li className="list-group-item">A fourth item</li>
         <li className="list-group-item">A fifth item</li>
         <li className="list-group-item">A sixth item</li>
-    </ul>
+    </ul>;
 }
 
 export default ListGroup;
