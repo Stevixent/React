@@ -1,6 +1,6 @@
 import { Fragment } from "react";
 function ListGroup() {
-  const items = ["New York", "San Francisco", "Tokyo", "London", "Paris"];
+  let items = ["New York", "San Francisco", "Tokyo", "London", "Paris"];
 
   return (
     <Fragment>
@@ -8,7 +8,13 @@ function ListGroup() {
       {items.length === 0 && <p>No item Found</p>}
       <ul className="list-group">
         {items.map((item) => (
-          <li key={item}>{item}</li>
+          <li
+            className="list-group-item"
+            key={item}
+            onClick={() => console.log("Clicked")}
+          >
+            {item}
+          </li>
         ))}
       </ul>
     </Fragment>
