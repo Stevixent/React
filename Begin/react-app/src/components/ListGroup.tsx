@@ -1,6 +1,9 @@
-import { Fragment } from "react";
+import { Fragment, useState } from "react";
+
 function ListGroup() {
   let items = ["New York", "San Francisco", "Tokyo", "London", "Paris"];
+
+  const [selectedIndex, setSelectedIndex] = useState(-1);
 
   return (
     <Fragment>
@@ -9,9 +12,15 @@ function ListGroup() {
       <ul className="list-group">
         {items.map((item, index) => (
           <li
-            className="list-group-item"
+            className={
+              selectedIndex === index
+                ? "list-group-item active"
+                : "list-group-item"
+            }
             key={item}
-            onClick={() => console.log(item, index)}
+            onClick={() => {
+              setSelectedIndex(index);
+            }}
           >
             {item}
           </li>
