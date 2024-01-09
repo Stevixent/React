@@ -5,14 +5,12 @@ interface Props {
   heading: string;
 }
 
-function ListGroup(props: Props) {
-  let items = ["New York", "San Francisco", "Tokyo", "London", "Paris"];
-
+function ListGroup({ items, heading }: Props) {
   const [selectedIndex, setSelectedIndex] = useState(-1);
 
   return (
     <Fragment>
-      <h1>List</h1>
+      <h1>{heading}</h1>
       {items.length === 0 && <p>No item Found</p>}
       <ul className="list-group">
         {items.map((item, index) => (
