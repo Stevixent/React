@@ -1,6 +1,11 @@
 import { Fragment, useState } from "react";
 
-function ListGroup() {
+interface Props {
+  items: string[];
+  heading: string;
+}
+
+function ListGroup(props: Props) {
   let items = ["New York", "San Francisco", "Tokyo", "London", "Paris"];
 
   const [selectedIndex, setSelectedIndex] = useState(-1);
